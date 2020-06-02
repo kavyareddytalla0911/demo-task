@@ -37,6 +37,13 @@ stages:
         Contents: 'backend-deployment.yaml'
         TargetFolder: '$(build.artifactstagingdirectory)'
       condition: succeededOrFailed()
+    - task: CopyFiles@2
+      displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+      inputs:
+        SourceFolder: 'kuberenetes-demo-manifests-master/kuberenetes-demo-manifests-master/'
+        Contents: 'frontend-deployment.yaml'
+        TargetFolder: '$(build.artifactstagingdirectory)'
+
     - task: PublishBuildArtifacts@1
       displayName: 'Publish Artifact: drop'
       inputs:
