@@ -46,7 +46,7 @@ stages:
       displayName: buildAndPush
       inputs:
         containerRegistry: 'dockerconnection'
-        repository: 'kavyareddy0911/demo-project-frontend'
+        repository: 'kavyareddytalla0911/demo-project-frontend'
         Dockerfile: 'kubernetes-demo-frontend-master/Dockerfile'
         tags: 'v_$(Build.BuildId)'
 
