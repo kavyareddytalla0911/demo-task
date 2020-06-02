@@ -45,7 +45,15 @@ stages:
     - task: Docker@2
       displayName: buildAndPush
       inputs:
+        containerRegistry: mydockerconnection
+        repository: 'kavyareddy0911/demo-project-frontend'
+        Dockerfile: 'kubernetes-demo-frontend-master/Dockerfile'
+        tags: 'v_$(Build.BuildId)'
+
+    - task: Docker@2
+      displayName: buildAndPush
+      inputs:
         containerRegistry: 'dockerconnection'
-        repository: 'kavyareddytalla0911/demo-project'
+        repository: 'kavyareddytalla0911/demo-project-backend'
         Dockerfile: Dockerfile
         tags: 'v_$(Build.BuildId)'
