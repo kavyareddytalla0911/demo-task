@@ -7,7 +7,6 @@ spec:
   selector: # pod labels should match these
     app: to-do-app
     tier: frontend
-    version: #{version}#
   ports:
   - protocol: "TCP"
     port: 80
@@ -18,24 +17,21 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: to-do-app-frontend-#{version}#
+  name: to-do-app-frontend
   labels: # pod labels should match these
     app: to-do-app
     tier: frontend
-    version: #{version}#
 spec:
   replicas: 2  # number of replicas of frontEnd application
   selector:
     matchLabels: 
       app: to-do-app
       tier: frontend
-      version: #{version}#
   template:
     metadata:
       labels: # Must match 'Service' and 'Deployment' labels
         app: to-do-app
         tier: frontend
-        version: #{version}#
     spec:                 
       containers: 
       - name: to-do-app-frontend 
