@@ -18,7 +18,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: to-do-app-frontend
+  name: to-do-app-frontend-#{version}#
   labels: # pod labels should match these
     app: to-do-app
     tier: frontend
